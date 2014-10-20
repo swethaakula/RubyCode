@@ -1,0 +1,8 @@
+# Logfile created on 2014-10-12 19:41:53 -0400 by logger.rb/31641
+I, [2014-10-12T19:42:20.089621 #3912]  INFO -- : one operation is completed
+I, [2014-10-12T19:50:11.623159 #11684]  INFO -- : one operation is completed
+I, [2014-10-12T19:50:13.448379 #11684]  INFO -- : monthly payment value: $278.90
+I, [2014-10-12T19:53:42.467608 #12144]  INFO -- : one operation is completed
+E, [2014-10-12T19:53:45.527646 #12144] ERROR -- : scenario is failed Verify mortgage monthly repayment amount
+kfc.gsc-c
+ccsrxcrcjclcc0ccchccjc/C0cckkjchcg=lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll

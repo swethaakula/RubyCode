@@ -1,0 +1,12 @@
+gem 'mysql'
+gem 'dbi'
+gem 'activerecord'
+gem 'dbd-mysql'
+gem 'cucumber'
+#gem 'watir-classic'
+gem 'roo'
+gem 'spreadsheet'
+gem 'rubysl-singleton'
+gem 'watir-webdriver'
+gem 'page-object'
+

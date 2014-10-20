@@ -1,0 +1,215 @@
+# def reverseString(inputString)
+#   reversedString = ""
+#   for i in 0..inputString.length-1
+#     reversedString = inputString[i] + reversedString
+#   end
+#   return reversedString
+# end
+# puts reverseString("I Love Ruby")
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#palindrome
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# def printPalindrome(inputString)
+#   for i in 0..inputString.length/2
+#     if (inputString[i] == inputString[inputString.length-1-i])
+#       isPalindrome = true
+#     else
+#       isPalindrome = false
+#       break
+#     end
+#   end
+#   if isPalindrome == true
+#     puts "#{inputString} is palindrome"
+#   else
+#     puts "#{inputString} is not a palindrome"
+#   end
+#
+# end
+# printPalindrome("abaabad")
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#reverse string with ruby methods
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# def printReverseString(inputString)
+#   reversedString = ""
+#   inputString.each_char { |c|
+#     reversedString = c + reversedString
+#   }
+#   return reversedString
+# end
+# puts printReverseString("I have interview tomorrow")
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#string split function
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# def printReverseString(inputString)
+#   splitArray = []
+#   reversedString = ""
+#   splitArray = inputString.split(//)
+#   splitArray.each {|c|
+#     reversedString = c + reversedString
+#   }
+#   return reversedString
+# end
+# puts printReverseString("I have interview tomorrow")
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#print even odd numbers
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# def printEvenOddNumbers(inputArray)
+#   evenArray = []
+#   oddArray = []
+#   inputArray.each {|element|
+#     if element%2 == 0
+#       evenArray << element
+#     else
+#       oddArray << element
+#     end
+#   }
+#   puts evenArray.inspect
+#   puts oddArray.inspect
+# end
+# printEvenOddNumbers(inputArray)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Hash Example
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+# hash_example1 = Hash["string" => "Swetha", "fixNum" => 13, "array" => [1,2,3,4,5], "hash" => Hash["a" =>10]]
+#
+# def printElementClass(hash_example)
+#   hash_example.each_pair { | key, value|
+#   if key == "fixNum"
+#     puts "#{key} class is #{value.class.superclass} "
+#   else
+#     puts "#{key} class is #{value.class} "
+#   end
+#   }
+# end
+# printElementClass(hash_example1)
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# print Roman Numbers
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# def printRomanEqualNumber(romanNumber)
+#   romanHash = Hash["I" => 1, "V" => 5, "X" => 10, "L" => 50, "C" => 100, "D" => 500, "M" => 1000]
+#   finalValue =0
+#   for i in 0..romanNumber.length-1
+#     if (i != romanNumber.length-1)
+#       if (romanHash[romanNumber[i]] >= romanHash[romanNumber[i+1]])
+#         finalValue = finalValue+ romanHash[romanNumber[i]]
+#       else
+#       finalValue = finalValue - romanHash[romanNumber[i]]
+#       end
+#     end
+#   end
+#   return finalValue + romanHash[romanNumber[romanNumber.length-1]]
+# end
+#
+# puts printRomanEqualNumber("MMMCMIC")
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#sort Array
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# contract2 = %w{swetha is a god good girl girls}
+#
+# def sortArray(contract2)
+#   finalArray = []
+#   for i in 0..contract2.length-1
+#     for j in i..contract2.length-1
+#       returnValue = contract2[i] <=> contract2[j]
+#       if returnValue == -1
+#         finalArray << contract2[i]
+#       else
+#         tempValue = contract2[i]
+#         contract2[i] = contract2[j]
+#         contract2[j] = tempValue
+#       end
+#     end
+#   end
+#   return contract2.inspect
+# end
+#
+# puts sortArray(contract2)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#array sor with sort method
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# contract2 = %w{swetha is a god good girl girls}
+# contract3 = %w{ranjith is a bad boy}
+# contractArray = []
+# contractArray.concat(contract2).concat(contract3)
+#
+# def sortArray(contractArray)
+#   puts contractArray.inspect
+#   sortedArray = contractArray.sort{ |a, b |  a <=> b}
+#   return sortedArray.inspect
+# end
+# puts sortArray(contractArray)
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Dates
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# require 'date'
+#
+# puts Time.now
+# puts Time.now + (60*60*4*24)
+#
+# puts Date.today
+# d = Date.new(2014,10,19,)
+# puts d.strftime('%d-%m-%Y')
+# dateTimeObj= d.to_datetime
+# puts dateTimeObj.strftime('%d-%m-%Y-%H-%M')
+# puts DateTime.now
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#file read program
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+# fileName = "E:\\samatha\\myFamilyData.csv"
+#
+# def fileReadMethod(fileName)
+#   f = File.new(fileName, 'r')
+#   headerHash = Hash.new()
+#   outputArray = []
+#   i=0
+#   while (line = f.readline())
+#     wordsArray = line.split(',')
+#     if i == 0
+#       for j in 0..wordsArray.length-1
+#         headerHash[j] = wordsArray[j]
+#       end
+#     else
+#       wordsHash = Hash.new()
+#       for j in 0..wordsArray.length-1
+#         wordsHash[headerHash[j]] = wordsArray[j]
+#       end
+#       outputArray << wordsHash
+#     end
+#     i +=1
+#     break if f.eof?
+#   end
+#   return outputArray.inspect
+# end
+#
+# puts fileReadMethod(fileName)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#print excel data
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+require 'roo'
+fileName = "E:\\samatha\\familyData.xlsx"
+
+def fileReadExcel(fileName)
+  outputArray = []
+  workBook = Roo::Excelx.new(fileName)
+  workBook.default_sheet = workBook.sheets[0]
+  headerHash = Hash.new()
+  workBook.row(1).each_with_index { |header,i|
+    headerHash[i] = header
+  }
+  for i in 2..workBook.last_row
+    rowHash = Hash.new()
+    for j in 1..workBook.last_column
+      rowHash[headerHash[j-1]] = workBook.cell(i,j)
+    end
+    outputArray << rowHash
+  end
+  return outputArray.inspect
+end
+
+puts fileReadExcel(fileName)

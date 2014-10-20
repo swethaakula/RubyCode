@@ -1,0 +1,8 @@
+mortgage_data: 
+- {home_value: 200000, loan_amount: 100000, interest_rate: 5, loan_term: 15, start_month: Jan, start_year: 2015, property_tax: 1.25, PMI: 0.5, monthly_pay: $990.13 }
+- {home_value: 200000, loan_amount: 100000, interest_rate: 5, loan_term: 15, start_month: Jan, start_year: 2015, property_tax: 1.25, PMI: 0.5, monthly_pay: $999.13 }
+
+
+
+
+ 

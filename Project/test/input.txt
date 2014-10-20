@@ -1,0 +1,2 @@
+xyzis is the syswrite method writing
+ abcdefghijklmnop

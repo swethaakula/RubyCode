@@ -1,0 +1,2 @@
+app_url: URL=http://www.mortgagecalculator.org/
+default: -p app_url
